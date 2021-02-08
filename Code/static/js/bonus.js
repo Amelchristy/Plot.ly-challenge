@@ -22,7 +22,7 @@ function gaugeChart(valueSelect) {
             { range: [1, 2], color: "#AFEEEE" },
             { range: [2, 3], color: "#ADD8E6" },
             { range: [3, 4], color: "#87CEEB" },
-            { range: [4, 5], color: "#82E0AA" },
+            { range: [4, 5], color: "#95C8D8" },
             { range: [5, 6], color: "#00BFFF" },
             { range: [6, 7], color: "#1E90FF" },
             { range: [7, 8], color: "#0000FF" },
