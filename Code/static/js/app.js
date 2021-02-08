@@ -1,6 +1,6 @@
 var data;
 
-//init function to fill in the select option
+
 
 function init() {
   d3.json("data/samples.json").then(incomingData => {
@@ -23,8 +23,8 @@ function init() {
   });
 };
 
-//functions to clean and create bacteria/ouid lists
-function fixBacteria(name) {
+
+function Bacteria(name) {
     var listBacteria = [];
   
     for (var i = 0; i < name.length; i++) {
@@ -39,7 +39,7 @@ function fixBacteria(name) {
     return listBacteria;
   }
   
-  function fixOuid(name) {
+  function Ouid(name) {
     var listOuid = [];
     for (var i = 0; i < name.length; i++) {
       listOuid.push(`OTU ${name[i]}`);
@@ -47,7 +47,7 @@ function fixBacteria(name) {
     return listOuid;
   }
 
-
+// plots
 function plotFunctions() {
   var valueSelect = d3.select("#selDataset").node().value;
   console.log(valueSelect);
