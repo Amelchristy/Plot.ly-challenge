@@ -24,7 +24,7 @@ function init() {
 };
 
 
-function Bacteria(name) {
+function cleanBacteria(name) {
     var listBacteria = [];
   
     for (var i = 0; i < name.length; i++) {
@@ -39,7 +39,7 @@ function Bacteria(name) {
     return listBacteria;
   }
   
-  function Ouid(name) {
+  function cleanOuid(name) {
     var listOuid = [];
     for (var i = 0; i < name.length; i++) {
       listOuid.push(`OTU ${name[i]}`);
@@ -74,12 +74,12 @@ function demographicInfo(valueSelect) {
 function barChart(valueSelect) {
   var filteredValue = data.samples.filter(d => d.id == +valueSelect);
   var ouid = filteredValue.map(d => d.otu_ids);
-  ouid = fixOuid(ouid[0].slice(0, 10));
+  ouid = cleanOuid(ouid[0].slice(0, 10));
   var valueX = filteredValue.map(d => d.sample_values);
   valueX = valueX[0].slice(0, 10);
 
   var otu_label = filteredValue.map(d => d.otu_labels);
-  var names = fixBacteria(otu_label[0]).slice(0, 10);
+  var names = cleanBacteria(otu_label[0]).slice(0, 10);
   console.log(ouid);
   console.log(valueX);
   console.log(otu_label);
@@ -113,7 +113,7 @@ function bubbleChart(valueSelect) {
   yValue = yValue[0];
 
   var otu_label = filteredValue.map(d => d.otu_labels);
-  otu_label = fixBacteria(otu_label[0]);
+  otu_label = cleanBacteria(otu_label[0]);
 
   var trace1 = {
     x: ouid,
