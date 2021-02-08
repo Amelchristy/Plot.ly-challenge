@@ -39,12 +39,12 @@ function cleanBacteria(name) {
     return listBacteria;
   }
   
-  function cleanOuid(name) {
-    var listOuid = [];
+  function cleanotu(name) {
+    var listotu = [];
     for (var i = 0; i < name.length; i++) {
-      listOuid.push(`OTU ${name[i]}`);
+      listotu.push(`OTU ${name[i]}`);
     }
-    return listOuid;
+    return listotu;
   }
 
 // plots
@@ -73,21 +73,21 @@ function demographicInfo(valueSelect) {
 
 function barChart(valueSelect) {
   var filteredValue = data.samples.filter(d => d.id == +valueSelect);
-  var ouid = filteredValue.map(d => d.otu_ids);
-  ouid = cleanOuid(ouid[0].slice(0, 10));
+  var otu = filteredValue.map(d => d.otu_ids);
+  otu = cleanotu(otu[0].slice(0, 10));
   var valueX = filteredValue.map(d => d.sample_values);
   valueX = valueX[0].slice(0, 10);
 
   var otu_label = filteredValue.map(d => d.otu_labels);
   var names = cleanBacteria(otu_label[0]).slice(0, 10);
-  console.log(ouid);
+  console.log(otu);
   console.log(valueX);
   console.log(otu_label);
   console.log(names);
 
   var trace = {
     x: valueX,
-    y: ouid,
+    y: otu,
     text: names,
     type: "bar",
     orientation: "h"
@@ -107,8 +107,8 @@ function barChart(valueSelect) {
 
 function bubbleChart(valueSelect) {
   var filteredValue = data.samples.filter(value => value.id == +valueSelect);
-  var ouid = filteredValue.map(d => d.otu_ids);
-  ouid = ouid[0];
+  var otu = filteredValue.map(d => d.otu_ids);
+  otu = otu[0];
   var yValue = filteredValue.map(d => d.sample_values);
   yValue = yValue[0];
 
@@ -116,16 +116,16 @@ function bubbleChart(valueSelect) {
   otu_label = cleanBacteria(otu_label[0]);
 
   var trace1 = {
-    x: ouid,
+    x: otu,
     y: yValue,
     mode: "markers",
     marker: {
-      color: ouid,
+      color: otu,
       size: yValue
     },
     text: otu_label
   };
-
+  
   var bubbleData = [trace1];
 
   var layout = {
