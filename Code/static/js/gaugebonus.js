@@ -43,7 +43,7 @@ function gaugeChart(valueSelect) {
     //margin: { t: 0, b: 0 } 
     margin: { t: 25, r: 25, l: 25, b: 25 },
     paper_bgcolor: "white",
-    font: { color: "black", family: "Arial" }
+    font: { color: "black", family: "Papyrus" }
     };
     
     Plotly.newPlot("gauge", guageData, layout);
