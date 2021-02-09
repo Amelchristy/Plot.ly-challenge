@@ -90,7 +90,9 @@ function barChart(valueSelect) {
     y: otu,
     text: names,
     type: "bar",
-    orientation: "h"
+    orientation: "h",
+    marker: {
+      color: "teal"}
   };
 
   var layout = {
