@@ -29,7 +29,7 @@ function gaugeChart(valueSelect) {
             { range: [8, 9], color: "#000080" }
           ],
           threshold: {
-            line: { color: "red", width: 5 },
+            line: { color: "orange", width: 5 },
             thickness: 1,
             value: weeklyFreq
           }
