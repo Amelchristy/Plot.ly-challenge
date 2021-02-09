@@ -121,7 +121,8 @@ function bubbleChart(valueSelect) {
     mode: "markers",
     marker: {
       color: otu,
-      size: yValue
+      size: yValue,
+      colorscale: "Earth"
     },
     text: otu_label
   };
